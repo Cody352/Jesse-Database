@@ -1,0 +1,97 @@
+<%- include('../partials/header'); %>
+
+<h1>Welcome to your Create Page.</h1>
+
+<div class="container">
+  <form class="form" action="/clients" method="POST">
+    <div class="form-group">
+      <label for="clientName">Client Name</label>
+      <input
+        type="text"
+        class="form-control"
+        id="clientName"
+        aria-describedby="clientName"
+        placeholder="Enter Client Name"
+        name="clientName"
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="clientAddress">Client Address</label>
+      <input
+        type="text"
+        class="form-control"
+        id="clientAddress"
+        aria-describedby="clientAddress"
+        placeholder="Enter Client Address"
+        name="clientAddress"
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="workDate">Work Date</label>
+      <input
+        type="date"
+        class="form-control"
+        id="workDate"
+        aria-describedby="workDate"
+        placeholder="Enter Work Date"
+        name="workDate"
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="invoiceAmount">Invoice Amount</label>
+      <input
+        type="number"
+        class="form-control"
+        id="invoiceAmount"
+        aria-describedby="invoiceAmount"
+        placeholder="Enter Invoice Amount"
+        name="invoiceAmount"
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="paymentReceived">Payment Received</label>
+      <input
+        type="text"
+        class="form-control"
+        id="paymentReceived"
+        aria-describedby="paymentReceived"
+        placeholder="Payment was received?"
+        name="paymentReceived"
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="telno">Telephone Number</label>
+      <input
+        type="number"
+        class="form-control"
+        id="telno"
+        aria-describedby="telno"
+        placeholder="Enter Client Telephone Number"
+        name="telno"
+    />
+    </div>
+
+    <div class="form-group">
+      <label for="product">Product</label>
+      <input
+        type="text"
+        class="form-control"
+        id="product"
+        aria-describedby="product"
+        placeholder="Enter Client Product"
+        name="product"
+    />
+    </div>
+      <p></p>
+      <button type="submit" class="btn btn-primary">Submit</button>
+      <a class="btn btn-md btn-warning" href="/clients">Home</a>
+    </div>
+  </form>
+</div>
+
+<%- include('../partials/footer'); %>

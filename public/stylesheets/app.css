@@ -1,0 +1,38 @@
+.navbar {
+  margin: 25px auto;
+  font-weight: 700;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+}
+
+h1 {
+  color: crimson;
+  text-align: center;
+}
+
+h4 {
+  color: crimson;
+  text-align: center;
+  font-weight: 500;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+
+.datbut {
+  margin-left: 20px;
+  text-align: center;
+  font-weight: 900;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.form {
+  text-align: center;
+  margin: 25px auto;
+}
+
+.table {
+  text-align: center;
+  margin: 25px auto;
+}
+
+h5 {
+  color: orange;
+}

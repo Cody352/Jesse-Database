@@ -1,0 +1,41 @@
+<%- include('./partials/header'); %>
+
+<div class="container">
+  <!-- Flash -->
+  <% if(success & success.length > 0){ %>
+  <div class="alert alert-success" role="alert">
+    <%=success%>
+  </div>
+  <% }; %> <% if(error && error.length > 0){ %>
+  <div class="alert alert-danger" role="alert">
+    <%=error%>
+  </div>
+  <%};%>
+</div>
+
+<div class="container">
+  <h1>Welcome to your login page</h1>
+
+  <p></p>
+
+  <form action="/login" method="post" class="form">
+    <div>
+      <input type="text" name="username" placeholder="username" />
+    </div>
+    <p></p>
+    <div>
+      <input type="password" name="password" placeholder="password" />
+    </div>
+    <p></p>
+    <div>
+      <input type="adminCode" name="adminCode" placeholder="adminCode" />
+    </div>
+    <p></p>
+
+    <div>
+      <button class="btn btn-primary" type="submit">Submit</button>
+      <a class="btn btn-primary" href="/" role="button">Home</a>
+    </div>
+  </form>
+</div>
+<%- include('./partials/footer'); %>

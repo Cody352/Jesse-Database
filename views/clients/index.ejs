@@ -1,0 +1,73 @@
+<%- include('../partials/header'); %>
+
+<div class="container">
+  <table class="table table-dark table-striped">
+    <thead>
+      <th>Client Name</th>
+      <th>Client Address</th>
+      <th>Work Date</th>
+      <th>Invoice Amount</th>
+      <th>Payment Received</th>
+      <th>Telephone Number</th>
+      <th>Product</th>
+    </thead>
+
+    <% clients.forEach(function(client){ %>
+    <tbody>
+      <tr>
+        <td><h5><%=client.clientName %></h5></td>
+        <td><%=client.clientAddress %></td>
+        <td><%= client.workDate %></td>
+        <td><%=client.invoiceAmount %></td>
+        <td><%=client.paymentReceived %></td>
+        <td><%= client.telno %></td>
+        <td><%= client.product %></td>
+        <td>
+          <!-- <a class="btn btn-sm btn-success" href="<%=client._id%>"
+            >Show this client</a
+          > -->
+
+          <!-- <form action="/clients/<%=client._id%>?_method=DELETE" method="POST">
+            <div class="delbut">
+              We rather use an input for the button because then we don't need to write innerHTML as with a button
+
+              <input
+                type="submit"
+                class="btn btn-md btn-danger"
+                value="Delete"
+              />
+            </div>
+          </form> -->
+
+          <% if(currentUser && currentUser.isAdmin){ %>
+            <a href="/clients/<%= client._id %>/edit" class="btn btn-warning btn-sm">Edit</a>
+          
+            <p></p>
+            <div class="delbut">
+              <form
+                action="/clients/<%=client._id %>?_method=DELETE"
+                method="POST"
+              >
+                <button class="btn btn-danger">Delete</button>
+              </form>
+            </div>
+            <%}%>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+    <%})%>
+  </table>
+  <p></p>
+  <div>
+    <%if(currentUser && currentUser.isAdmin){%>
+    <a class="btn btn-success" href="/clients/new" role="button"
+      >Add a new client</a
+    >
+    <%}%>
+    <a class="btn btn-success" href="/" role="button">Home</a>
+  </div>
+</div>
+<!--Container Div-->
+
+<%- include('../partials/footer'); %>
