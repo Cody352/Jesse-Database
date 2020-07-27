@@ -3,6 +3,7 @@ const router = express.Router();
 const passport = require("passport");
 const mongoose = require("mongoose");
 const middleware = require("../middleware/index");
+const User = require("../models/index");
 
 router.get("/", function (req, res) {
   res.render("./clients/landing", { currentUser: req.user });
@@ -26,7 +27,7 @@ router.post("/register", function (req, res) {
       return res.render("register");
     }
     passport.authenticate("local")(req, res, function () {
-      req.flash("success", "Welcome to Commerce " + user.username);
+      req.flash("success", "Welcome to Jesse " + user.username);
       res.redirect("/");
     });
   });
