@@ -24,7 +24,13 @@ app.use(flash());
 mongoose.set("useNewUrlParser", true);
 mongoose.set("useFindAndModify", false);
 mongoose.set("useCreateIndex", true);
-mongoose.set("useUnifiedTopology", true);
+mongoose.set(
+  "useUnifiedTopology",
+  true,
+  { useNewUrlParser: true },
+  { connectTimeoutMS: 30000 },
+  { keepAlive: 1 }
+);
 mongoose.connect("mongodb://localhost:27017/jesse", function (err) {
   if (err) {
     console.log(err);
